@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-154417968-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-154417968-2");
+    </script> -->
+    <!-- Start Lytics Tracking Tag Version 3 -->
+    <script type="text/javascript">
+      !(function () {
+        "use strict";
+        var o = window.jstag || (window.jstag = {}),
+          r = [];
+        function n(e) {
+          o[e] = function () {
+            for (var n = arguments.length, t = new Array(n), i = 0; i < n; i++)
+              t[i] = arguments[i];
+            r.push([e, t]);
+          };
+        }
+        n("send"),
+          n("mock"),
+          n("identify"),
+          n("pageView"),
+          n("unblock"),
+          n("getid"),
+          n("setid"),
+          n("loadEntity"),
+          n("getEntity"),
+          n("on"),
+          n("once"),
+          n("call"),
+          (o.loadScript = function (n, t, i) {
+            var e = document.createElement("script");
+            (e.async = !0), (e.src = n), (e.onload = t), (e.onerror = i);
+            var o = document.getElementsByTagName("script")[0],
+              r = (o && o.parentNode) || document.head || document.body,
+              c = o || r.lastChild;
+            return null != c ? r.insertBefore(e, c) : r.appendChild(e), this;
+          }),
+          (o.init = function n(t) {
+            return (
+              (this.config = t),
+              this.loadScript(t.src, function () {
+                if (o.init === n) throw new Error("Load error!");
+                o.init(o.config),
+                  (function () {
+                    for (var n = 0; n < r.length; n++) {
+                      var t = r[n][0],
+                        i = r[n][1];
+                      o[t].apply(o, i);
+                    }
+                    r = void 0;
+                  })();
+              }),
+              this
+            );
+          });
+      })();
+      // Define config and initialize Lytics tracking tag.
+      jstag.init({
+        src:
+          "//c.lytics.io/api/tag/12ef3654080b6b6ee03fe1048cc9a094/latest.min.js",
+      });
+    </script>
+  </head>
+  <body>
+    Advocates campaign test
+    <div id="form-container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
