@@ -47,7 +47,7 @@ window.addEventListener(
           ? console.log(
               "parameters to send to lytics",
               `_uid=${numericPartOfUid} utm_term=${utmTerm} utm_source${utmSource} utm_content=${utmContent} utm_medium=${utmMedium}
-               first_name=${firstName} last_name=${lastName} email=${email} TELEPHONE=${telephone}`
+               first_name=${firstName} last_name=${lastName} email=${email} telephone=${telephone}`
             )
           : null;
         // create iFrame and append to `div`
@@ -55,7 +55,7 @@ window.addEventListener(
         let ifrm = document.createElement("iframe");
         ifrm.setAttribute(
           "src",
-          `https://takeaction.citizenwindow.io/?uc=${UNIQUE_CAMPAIGN}&uf=${UNIQUE_FORM}&_uid=${numericPartOfUid}&utm_term=${utmTerm}&utm_source=${utmSource}&utm_content=${utmContent}&utm_medium=${utmMedium}&first_name=${firstName}&last_name=${lastName}&email=${email}&TELEPHONE=${telephone}`
+          `https://takeaction.citizenwindow.io/?uc=${UNIQUE_CAMPAIGN}&uf=${UNIQUE_FORM}&_uid=${numericPartOfUid}&utm_term=${utmTerm}&utm_source=${utmSource}&utm_content=${utmContent}&utm_medium=${utmMedium}&first_name=${firstName}&last_name=${lastName}&email=${email}&telephone=${telephone}`
         );
         ifrm.setAttribute("id", "advocates-iframe");
         ifrm.setAttribute("width", "100%");
