@@ -46,7 +46,7 @@ window.addEventListener(
         ENABLE_DEBUGGING
           ? console.log(
               "parameters to send to lytics",
-              `utm_term=${utmTerm} utm_source${utmSource} utm_content=${utmContent} utm_medium=${utmMedium}`
+              `_uid=${${numericPartOfUid} utm_term=${utmTerm} utm_source${utmSource} utm_content=${utmContent} utm_medium=${utmMedium}`
             )
           : null;
         // create iFrame and append to `div`
