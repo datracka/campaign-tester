@@ -4,10 +4,6 @@ let UNIQUE_CAMPAIGN = "zB3cFUUl7vj9BLybZAOQH";
 let UNIQUE_FORM = "sF95edmndPP8niRMu46Th";
 let ENABLE_DEBUGGING = true;
 let CONTAINER_ID = "form-container";
-let FIRST_NAME = "Vicens";
-let LAST_NAME = "Fayos";
-let EMAIL = "datracka@gmail.com";
-let TELEPHONE = "(213) 341 343";
 
 //* End of custom configuration *//
 
@@ -42,11 +38,16 @@ window.addEventListener(
         let utmSource = getUrlParam("utm_source", "");
         let utmContent = getUrlParam("utm_content", "");
         let utmMedium = getUrlParam("utm_medium", "");
+        let firstName = getUrlParam("first_name", "");
+        let lastName = getUrlParam("last_name", "");
+        let email = getUrlParam("email", "");
+        let telephone = getUrlParam("telephone", "");
 
         ENABLE_DEBUGGING
           ? console.log(
               "parameters to send to lytics",
-              `_uid=${numericPartOfUid} utm_term=${utmTerm} utm_source${utmSource} utm_content=${utmContent} utm_medium=${utmMedium}`
+              `_uid=${numericPartOfUid} utm_term=${utmTerm} utm_source${utmSource} utm_content=${utmContent} utm_medium=${utmMedium}
+               first_name=${firstName} last_name=${lastName} email=${email} TELEPHONE=${telephone}`
             )
           : null;
         // create iFrame and append to `div`
@@ -54,7 +55,7 @@ window.addEventListener(
         let ifrm = document.createElement("iframe");
         ifrm.setAttribute(
           "src",
-          `https://takeaction.citizenwindow.io/?uc=${UNIQUE_CAMPAIGN}&uf=${UNIQUE_FORM}&_uid=${numericPartOfUid}&utm_term=${utmTerm}&utm_source=${utmSource}&utm_content=${utmContent}&utm_medium=${utmMedium}&first_name=${FIRST_NAME}&last_name=${LAST_NAME}&email=${EMAIL}&TELEPHONE=${TELEPHONE}`
+          `https://takeaction.citizenwindow.io/?uc=${UNIQUE_CAMPAIGN}&uf=${UNIQUE_FORM}&_uid=${numericPartOfUid}&utm_term=${utmTerm}&utm_source=${utmSource}&utm_content=${utmContent}&utm_medium=${utmMedium}&first_name=${firstName}&last_name=${lastName}&email=${email}&TELEPHONE=${telephone}`
         );
         ifrm.setAttribute("id", "advocates-iframe");
         ifrm.setAttribute("width", "100%");
